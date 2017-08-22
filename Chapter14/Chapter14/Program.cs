@@ -10,18 +10,20 @@ namespace Chapter14
     {
         static void Main(string[] args)
         {
-           // MobilePhone test = new MobilePhone("test", "" , "" , "");
-        
-           MobilePhone.ShowNokiaN95();
+            int length = 5;
+            GenericList<int> numbers = new GenericList<int>(length);
+            numbers.AddItem(1488);
+            numbers.AddItem(43);
+            numbers.AddItem(25);
+            numbers.ShowItems();
+            int ss = numbers.FindItem(2);
+            numbers.InsertItem(4, 666);
+            numbers.RemoveItem(2);
+            numbers.ShowItems();
 
 
 
 
-        }
-        public static Student CreateStudent()
-        {
-            Student student = new Student();
-            return student;
 
         }
     }

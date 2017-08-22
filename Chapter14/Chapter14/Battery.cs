@@ -10,12 +10,20 @@ namespace Chapter14
     {
         string model { get; set; }
         string capacity { get; set; }
-        
+        enum BatteryType
+        {
+            LiIon, NiMH, NiCd, ColdFusion
+        }
 
        public Battery(string model, string capacity)
         {
             this.model = model;
             this.capacity = capacity;
         }
+
+
+
+
+  
     }
 }

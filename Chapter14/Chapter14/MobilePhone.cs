@@ -12,7 +12,7 @@ namespace Chapter14
         private string manufacturer { get; set; }
         private string price { get; set; }
         private string owner { get; set; }
-        private GSM gsm;
+        public GSM gsm;
         private Battery battery;
         private Display display;
 
