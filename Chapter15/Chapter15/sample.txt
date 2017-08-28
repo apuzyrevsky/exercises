@@ -1,8 +1,7 @@
+odd start
+even 
+odd start
+start even
 odd
 even
-odd
-even
-odd
-even
-odd
-even
+what is odd start

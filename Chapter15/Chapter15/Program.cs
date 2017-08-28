@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Chapter15
 {
@@ -15,13 +16,62 @@ namespace Chapter15
             string firstFile = @"..\..\firstfile.txt";
             string secondFile = @"..\..\secondfile.txt";
             string result = @"..\..\result.txt";
-
-            List<string> firstFileContent = SaveStringsFromFileToList(firstFile);
-            List<string> secondFileContent = SaveStringsFromFileToList(secondFile);
-            GetAmountOfComparedLines(firstFileContent, secondFileContent);
-           
+            string names = @"..\..\listofnames.txt";
+            string sortedNames = @"..\..\sortedlistofnames.txt";
+            string newFile = @"..\..\newfile.txt";
 
 
+        }
+
+        public static void ChangeStartOnFinish(string filename, string newFile)
+        {
+            StreamReader reader = new StreamReader(filename);
+            StreamWriter writer = new StreamWriter(newFile);
+            string line = reader.ReadLine();
+            using (reader)
+            {
+                using (writer)
+                {
+                    while (line != null)
+                    {
+                        bool exists = line.Contains("start");
+                        if (exists)
+                        {
+                            line = line.Replace("start", "finish");
+                            writer.WriteLine(line);
+                        }
+                        else
+                        {
+                            writer.WriteLine(line);
+                        }
+                        line = reader.ReadLine();
+                    }
+                }
+            }
+        }
+
+
+
+        public static void SortNames(string names, string sortedNames)
+        {
+            StreamReader reader = new StreamReader(names);
+            StreamWriter writer = new StreamWriter(sortedNames);
+            List<string> list = new List<string>();
+            using (reader)
+            {
+                while (!reader.EndOfStream)
+                {
+                    list.Add(reader.ReadLine());
+                }
+            }
+            list.Sort();
+            using (writer)
+            {
+                foreach (var item in list)
+                {
+                    writer.WriteLine(item);
+                }
+            }
 
         }
 
