@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Chapter15
 {
@@ -12,16 +14,34 @@ namespace Chapter15
     {
         static void Main(string[] args)
         {
-            string filename = @"..\..\sample.txt";
-            string firstFile = @"..\..\firstfile.txt";
-            string secondFile = @"..\..\secondfile.txt";
+           // string filename = @"..\..\sample.txt";
+            //string firstFile = @"..\..\firstfile.txt";
+            //string secondFile = @"..\..\secondfile.txt";
             string result = @"..\..\result.txt";
-            string names = @"..\..\listofnames.txt";
-            string sortedNames = @"..\..\sortedlistofnames.txt";
-            string newFile = @"..\..\newfile.txt";
-
+            //string names = @"..\..\listofnames.txt";
+            //string sortedNames = @"..\..\sortedlistofnames.txt";
+            //string newFile = @"..\..\newfile.txt";
+            string xmlFile = @"..\..\xml.xml";
 
         }
+
+        public static void GetDatafromXML(string filename, string result)
+        {
+            StreamReader reader = new StreamReader(filename);
+            StreamWriter writer = new StreamWriter(result);
+            StringBuilder sb = new StringBuilder();
+            string str;
+         //   string c = reader.ReadLine();
+            using (reader)
+            {
+                while(reader.Peek() >= 0)
+                {
+                    sb.Append(reader.ReadLine());
+                    
+                }
+            }
+        }
+
 
         public static void ChangeStartOnFinish(string filename, string newFile)
         {
