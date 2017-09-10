@@ -11,24 +11,58 @@ namespace Chapter16
     {
         static void Main(string[] args)
         {
-            List<int> list = new List<int>();
-            list.Add(1);
-            list.Add(4);
-            list.Add(9);
-            list.Add(8);
-            list.Add(8);
-            list.Add(9);
-            list.Add(9);
-            list.Add(9);
-            list.Add(9);
-            list.Add(9);
-            list.Add(9);
-            list.Add(9);
+            List<int> list = new List<int>
+            {
+                1,
+                4,
+                8,
+                8
+                
+            };
 
 
-
+         
 
         }
+
+        static int[] CalculationOccurrences(List<int> list)
+        {
+            int[] occurrences = new int[1001];
+            for (int i = 0; i < list.Count - 1; i++)
+            {
+                    occurrences[i] = 1;
+                for (int j = i + 1; j < list.Count; j++)
+                {
+                    if (list[i] == list[j])
+                    {
+                        occurrences[i]++;
+                    }
+                }
+            }
+            return occurrences;
+        }
+
+
+
+
+
+
+        static List<int> RemoveAllNegativeNumbers(List<int> list)
+        {
+            List<int> result = new List<int>();
+
+            foreach (var item in list)
+            {
+                if (item >=0)
+                {
+                    result.Add(item);
+                }
+            }
+            return result;
+
+        }
+
+
 
         static List<int> GetLongestSubsequence(List<int> list)
         {
