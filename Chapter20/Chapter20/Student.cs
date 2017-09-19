@@ -8,13 +8,11 @@ namespace Chapter20
 {
     public class Student : Human, IComparable<Student>
     {
-        int mark { get; set; }
+       public int Mark { get; set; }
 
         public int CompareTo(Student other)
         {
-            if (this.mark > other.mark) return -1;
-            if (this.mark == other.mark) return 0;
-            return 1;
+            return other.Mark.CompareTo(this.Mark); // ascending order, change other to this to do descending
         }
 
 

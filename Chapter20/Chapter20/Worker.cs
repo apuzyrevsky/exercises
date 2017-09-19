@@ -8,8 +8,8 @@ namespace Chapter20
 {
     public class Worker : Human
     {
-        public int wage { get; set; }
-        public int hoursWorked { get; set; }
+        public int Wage { get; set; }
+        public int HoursWorked { get; set; }
    
 
 
@@ -17,9 +17,9 @@ namespace Chapter20
         {
         }
 
-        public int CalculateHourlyWage(int wage, int hoursWorked)
+        public int CalculateHourlyWage(int Wage, int HoursWorked)
         {
-            int result = wage / hoursWorked;
+            int result = Wage / HoursWorked;
             return result;
         }
     }
